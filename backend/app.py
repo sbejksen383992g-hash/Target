@@ -3,6 +3,10 @@ from flask_cors import CORS
 import sqlite3
 from datetime import date
 from flask import Flask
+@app.route("/health")
+def health():
+    return "OK"
+
 
 app = Flask(__name__)
 
@@ -426,6 +430,7 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
